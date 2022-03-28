@@ -27,9 +27,9 @@ type AppServiceReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=aseara.github.com.aseara.github.com,resources=appservices,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=aseara.github.com.aseara.github.com,resources=appservices/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=aseara.github.com.aseara.github.com,resources=appservices/finalizers,verbs=update
+//+kubebuilder:rbac:groups=k8s.aseara.github.com,resources=appservices,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=k8s.aseara.github.com,resources=appservices/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=k8s.aseara.github.com,resources=appservices/finalizers,verbs=update
 //+kubebuilder:rbac:groups="",resources=pods;services;endpoints;persistentvolumeclaims;events;configmaps;secrets,verbs=*
 //+kubebuilder:rbac:groups="",resources=namespace,verbs=get
 //+kubebuilder:rbac:groups=apps,resources=deployments;daemonsets;replicasets;statefulsets,verbs=*
