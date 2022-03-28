@@ -19,6 +19,7 @@ import (
 
 	appv1 "github.com/aseara/appservice/api/v1"
 	"github.com/aseara/appservice/resource"
+	"github.com/go-logr/logr"
 )
 
 // AppServiceReconciler reconciles a AppService object
@@ -71,6 +72,7 @@ func (r *AppServiceReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 		if f && err == nil {
 			err = r.refreshSpec(ctx, instance)
 		}
+		logAndRtn(l, err, "something error")
 	}()
 
 	deploy := &appsv1.Deployment{}
@@ -145,4 +147,10 @@ func (r *AppServiceReconciler) refreshSpec(ctx context.Context, instance *appv1.
 		instance.Annotations = map[string]string{"spec": string(data)}
 	}
 	return r.Client.Update(ctx, instance)
+}
+
+func logAndRtn(l logr.Logger, err error, m string) {
+	if err != nil {
+		l.Error(err, m)
+	}
 }
