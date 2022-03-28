@@ -1,0 +1,16 @@
+domain: aseara.github.com
+layout:
+- go.kubebuilder.io/v3
+projectName: appservice
+repo: github.com/aseara/appservice
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: aseara.github.com
+  group: aseara.github.com
+  kind: AppService
+  path: github.com/aseara/appservice/api/v1
+  version: v1
+version: "3"
