@@ -9,7 +9,7 @@ resources:
     namespaced: true
   controller: true
   domain: aseara.github.com
-  group: aseara.github.com
+  group: k8s
   kind: AppService
   path: github.com/aseara/appservice/api/v1
   version: v1

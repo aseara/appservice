@@ -19,7 +19,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	asearagithubcomv1 "github.com/aseara/appservice/api/v1"
+	k8sv1 "github.com/aseara/appservice/api/v1"
 	"github.com/aseara/appservice/controllers"
 	//+kubebuilder:scaffold:imports
 )
@@ -32,7 +32,7 @@ var (
 func init() {
 	utilruntime.Must(clientgoscheme.AddToScheme(scheme))
 
-	utilruntime.Must(asearagithubcomv1.AddToScheme(scheme))
+	utilruntime.Must(k8sv1.AddToScheme(scheme))
 	//+kubebuilder:scaffold:scheme
 }
 

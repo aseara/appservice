@@ -1,4 +1,4 @@
-apiVersion: aseara.github.com.aseara.github.com/v1
+apiVersion: k8s.aseara.github.com/v1
 kind: AppService
 metadata:
   name: appservice-sample
